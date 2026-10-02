@@ -12,9 +12,7 @@ public class Main {
             new Lingkaran(7),
             new Persegi(5),
             new segitiga(3, 4, 5),
-            new Trapesium(3, 4, 5, 6)
-            // TODO Langkah 2: tambahkan new Segitiga(3, 4, 5) setelah kelasnya dibuat.
-            // TODO Langkah 4: tambahkan Trapesium setelah kelasnya dibuat.
+            new trapesium(3, 4, 5, 6)
         };
 
         System.out.println("=== Bangun Datar ===");

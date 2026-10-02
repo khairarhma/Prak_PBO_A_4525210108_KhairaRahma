@@ -145,5 +145,10 @@ Prinsip yang terlihat di sini adalah *Open/Closed*: kode terbuka untuk ekstensi 
 - Angka pada contoh `Trapesium` hanya contoh. Sesuaikan dengan soal bila ada.
 - Pada `Main.java`, aturan Langkah 1-2: hanya boleh **menambah** baris pada array, logika perulangan tidak diubah.
 - Jangan hapus `AntiPattern.java`; file itu dipakai berdampingan dengan versi refaktor saat demo.
-
+ 
+ # Screenshoot
+ ## Main java
+ ![alt text](image.png)
+ ## Main php
+ ![alt text](image-1.png)
 
