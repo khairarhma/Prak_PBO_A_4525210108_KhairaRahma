@@ -1,11 +1,19 @@
-# Pertemuan 6 - Abstract Class, Interface, Enum, dan Trait
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
 
-Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk membandingkan empat cara mengatur kode:
+| Informasi Praktikan | Keterangan |
+|---|---|
+| **Nama** | Khaira Rahma Aprilliani|
+| **NPM** | 4525210108 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [06] - [Abstract Class, Interface, Enum, dan Trait] |
+| **Tanggal** | [08-10-2026] |
 
 
-# Bagian Java
 
-## File Kendaraan.java
+## 1. Implementasi Java
+
+### 1.1 File Kendaraan.java
 
 ### Sebelum
 
@@ -29,7 +37,7 @@ Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk mem
 3. **`toString()`** memanggil `jumlahRoda()` milik objek yang sebenarnya, jadi hasilnya benar untuk Mobil maupun Sepeda.
 
 
-## File Movable.java
+### 1.2 File Movable.java
 
 ### Sebelum
 
@@ -53,7 +61,7 @@ Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk mem
 
 
 
-## File Mobil.java
+### 1.3 File Mobil.java
 
 ### Sebelum
 
@@ -84,7 +92,7 @@ Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk mem
 
 
 
-## File TipeBahanBakar.java
+### 1.4 File TipeBahanBakar.java
 
 ### Sebelum
 
@@ -111,9 +119,9 @@ Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk mem
 3. **`ramahLingkungan()` (TODO 4).** `return this == LISTRIK;`. Enum aman dibandingkan dengan `==` karena tiap konstanta hanya ada satu objeknya.
 4. **Contoh.** Biaya 10 satuan: Bensin Rp120.000, Solar Rp105.000, Listrik Rp25.000.
 
----
 
-## File sepeda.java (kelas baru)
+
+### 1.5 File sepeda.java (kelas baru)
 
 ### Setelah
 
@@ -125,9 +133,11 @@ Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk mem
 2. **`bergerak()`** mencetak `"Sepeda melaju di jalan raya"`, dan **`kecepatanMaksimum()`** mengembalikan `30`.
 3. **Method `Fuelable`.** `isiBahanBakar()` dan `tipeBahanBakar()` melempar `UnsupportedOperationException("Sepeda tidak menggunakan bahan bakar.")`, sedangkan `kapasitasTangki()` mengembalikan `0`.
 
----
+### Output
+![alt text](image-1.png)
 
-## File Main.java
+
+### 1.6 File Main.java
 
 ### Sebelum
 
@@ -160,9 +170,9 @@ Satu studi kasus **kendaraan** dalam dua bahasa, **Java** dan **PHP**, untuk mem
 
 
 
-# Bagian PHP
+## 2. Implementasi PHP
 
-## File abstraksi.php (semua tipe)
+### 2.1 File abstraksi.php (semua tipe)
 
 Interface, enum, trait, abstract class, dan semua kelas ditaruh dalam satu berkas agar mudah dibaca berdampingan dengan versi Java.
 
@@ -229,7 +239,7 @@ Interface, enum, trait, abstract class, dan semua kelas ditaruh dalam satu berka
 7. **`Pesanan` (Langkah 5).** `final class Pesanan` dengan `use Loggable`, properti `kode` dan `total`, dan `cetak()` yang mencatat `'pesanan <kode> siap diproses'`. Kelas ini tidak mewarisi apa pun, tetapi tetap bisa `log()` berkat trait.
 
 
-## File main.php
+### 2.2 File main.php
 
 ### Sebelum
 
@@ -256,9 +266,9 @@ Interface, enum, trait, abstract class, dan semua kelas ditaruh dalam satu berka
 3. **`Pesanan` dibuat** lewat `new Pesanan('#1042', 150000.0)` dan langsung memanggil `->log('pesanan #1042 dibuat')`.
 4. **Enum.** `TipeBahanBakar::cases()` mengembalikan semua `case`, dicetak dengan `number_format` agar ribuan tampil sebagai titik.
 
-## Hasil Output
+### Hasil Output
 ![alt text](image.png)
-![alt text](image-1.png)
+
 
 **Penjelasan dan kesimpulan:**
 

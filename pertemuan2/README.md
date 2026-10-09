@@ -1,8 +1,18 @@
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
 
 
-# Pertemuan 2 - Enkapsulasi
+| Informasi Praktikan | Keterangan |
+|---|---|
+| **Nama** | Khaira Rahma Aprilliani|
+| **NPM** | 4525210108 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [02] - [Enkapsulsasi] |
+| **Tanggal** | [10-09-2026] |
 
-## File Mahasiswa.java
+## 1. Implemntasi Java
+
+### 1.1 File Mahasiswa.java
 
 ### Sebelum
 
@@ -55,6 +65,11 @@ Kode setelah diperbaiki: validasi dibuat lebih ketat dan lebih aman.
 7. **`hurufMutu()` diberi pengaman.** Sebelum menentukan huruf, nilai akhir diperiksa. Kalau `NaN` atau `Infinity`, method melempar `IllegalStateException("Nilai akhir tidak valid")`.
 8. **Getter tetap tanpa setter NIM.** `getNim()`, `getNama()`, dan `getNilaiAkhir()` tetap ada, dan `nim` serta `nama` tetap `final`, sehingga tidak bisa diubah setelah objek dibuat.
 
+## Output java
+![alt text](image.png)
+
+## Output php
+![alt text](image-1.png)
 
 Program PBO yang menunjukkan bagaimana **enkapsulasi** dipakai untuk menjaga aturan (*invariant*) sebuah objek. Objek `Mahasiswa` menolak data yang tidak sah sejak constructor dipanggil, sehingga tidak mungkin ada objek dengan data rusak.
 
@@ -64,11 +79,6 @@ Program PBO yang menunjukkan bagaimana **enkapsulasi** dipakai untuk menjaga atu
 2. Setiap komponen nilai (tugas, UTS, UAS) harus berada di rentang **0 - 100**
 3. Nilai akhir = **30% tugas + 30% UTS + 40% UAS**
 
-## Output java
-![alt text](image.png)
-
-## Output php
-![alt text](image-1.png)
 
 ## Kesimpulan: 
 

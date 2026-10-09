@@ -1,16 +1,17 @@
-# Pertemuan 3 - Constructor Berdelegasi, Anggota Statis, dan Konstanta
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
 
-Class yang dikerjakan: `RekeningBank` dalam dua bahasa, **Java** dan **PHP**.
+| Informasi Praktikan | Keterangan |
+|---|---|
+| **Nama** | Khaira Rahma Aprilliani|
+| **NPM** | 4525210108 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [03] - [Constructor Berdelegasi, Anggota Statis, dan Konstanta] |
+| **Tanggal** | [17-09-2026] |
 
-**Invariant** (aturan yang harus selalu terjaga):
+## 1. Implementasi Java
 
-1. Saldo tidak pernah negatif
-2. Nomor rekening tidak berubah setelah objek dibuat
-3. Setoran dan penarikan selalu bernilai positif
-
----
-
-## File RekeningBank.java
+### 1.1 File RekeningBank.java
 
 ### Sebelum
 
@@ -68,9 +69,14 @@ Kode awal berisi kerangka class dengan 10 komentar `TODO` yang harus dikerjakan.
 9. **`getJumlahRekening()` (TODO 9).** Method statis yang mengembalikan `jumlahRekening`, sehingga bisa dipanggil lewat nama class: `RekeningBank.getJumlahRekening()`.
 10. **`bungaSetahun()` (TODO 10).** `return pokok * BUNGA_TAHUNAN;`. Method ini hanya memakai parameter dan konstanta, tidak menyentuh data objek, jadi cocok dibuat `static`.
 
----
+### Output java
+![alt text](image-3.png)
 
-## File RekeningBank.php
+
+
+## 2. Implementasi php
+
+### 2.1 File RekeningBank.php
 
 ### Sebelum
 
@@ -131,25 +137,17 @@ Kerangka yang sama dalam PHP. Karena PHP tidak punya *constructor overloading*, 
 11. **`bungaSetahun()` (TODO 10).** `return $pokok * self::BUNGA_TAHUNAN;` sebagai method statis karena tidak memakai data objek.
 12. **`__toString()`.** Format teks `Rekening[nomor] pemilik Rp...` memakai `sprintf` dan `number_format($this->saldo, 2, ',', '.')` agar saldo tampil dengan pemisah ribuan titik dan desimal koma.
 
+### Output php
+![alt text](image-2.png)
 
-## Output Contoh
 
-```
-Jumlah rekening di awal: 0
-Rekening[111] Ani        Rp1.000.000,00
-Rekening[222] Budi       Rp0,00
-Rekening[333] Citra      Rp250.000,00
-Jumlah rekening sekarang: 3
 
-=== Operasi ===
-Setelah setor 500.000  -> Rekening[111] Ani   Rp1.500.000,00
-Ditolak: Saldo tidak cukup
-Budi setelah potong admin: Rekening[222] Budi  Rp0,00  (saldo tidak boleh negatif)
-```
+
+
+
 ![alt text](image.png)
 ![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+
 
 ## Kesimpulan:
 

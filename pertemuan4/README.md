@@ -1,11 +1,20 @@
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
 
-# Pertemuan 4 - Pewarisan (Inheritance)
+| Informasi Praktikan | Keterangan |
+|---|---|
+| **Nama** | Khaira Rahma Aprilliani|
+| **NPM** | 4525210108 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [04] - [Pewarisan (Inheritance)] |
+| **Tanggal** | [24-09-2026] |
 
 
 
-Implementasi konsep **inheritance (pewarisan)** dan **polymorphism** dalam dua bahasa: Java dan PHP. Program ini menghitung gaji beberapa jenis pegawai yang punya aturan hitung berbeda-beda, tapi dipanggil lewat satu method yang sama: `hitungGaji()`.
 
-## File Pegawai.java
+## 1. Implementasi java
+
+### 1.1 File Pegawai.java
 
 ### Sebelum
 
@@ -36,7 +45,7 @@ Implementasi konsep **inheritance (pewarisan)** dan **polymorphism** dalam dua b
 4. **`toString()`** memakai `String.format("%-14s %-9s %-20s Rp%,.2f", ...)` agar tiap baris rapi berbentuk tabel.
 
 
-## File PegawaiTetap.java
+### 1.2 File PegawaiTetap.java
 
 ### Sebelum
 
@@ -81,7 +90,7 @@ Penyebabnya: `Pegawai` hanya punya constructor yang meminta tiga parameter. Kala
 
 
 
-## File PegawaiKontrak.java
+### 1.3 File PegawaiKontrak.java
 
 ### Sebelum
 
@@ -105,7 +114,7 @@ Penyebabnya: `Pegawai` hanya punya constructor yang meminta tiga parameter. Kala
 
 
 
-## File Pegawaiharian.java (kelas baru)
+### 1.4 File Pegawaiharian.java (kelas baru)
 
 ### Setelah
 
@@ -120,7 +129,7 @@ Penyebabnya: `Pegawai` hanya punya constructor yang meminta tiga parameter. Kala
 
 
 
-## File Dosen.java (kelas baru)
+### 1.5 File Dosen.java (kelas baru)
 
 ### Setelah
 
@@ -135,7 +144,7 @@ Penyebabnya: `Pegawai` hanya punya constructor yang meminta tiga parameter. Kala
 
 
 
-## File Main.java
+### 1.6 File Main.java
 
 ### Sebelum
 
@@ -162,9 +171,12 @@ Penyebabnya: `Pegawai` hanya punya constructor yang meminta tiga parameter. Kala
 2. **Polimorfisme.** Array bertipe `Pegawai`, tetapi isinya objek berbagai turunan. Saat `p.hitungGaji()` dan `toString()` dipanggil, Java otomatis menjalankan versi milik objek yang sebenarnya, tanpa `if` untuk memeriksa jenisnya.
 3. **Percobaan Langkah 1.** Mencoba `new Pegawai("X", "Y", 1000)` langsung menghasilkan error `Pegawai is abstract; cannot be instantiated`.
 
+### OUTPUT 
+[alt text](image.png) java
 
+##  2. Implementasi php
 
-## File pegawai.php (semua class)
+### 2.1 File pegawai.php (semua class)
 
 Di PHP, seluruh hierarki ditaruh dalam **satu berkas** agar mudah dibaca berdampingan dengan versi Java.
 
@@ -206,7 +218,7 @@ Di PHP, seluruh hierarki ditaruh dalam **satu berkas** agar mudah dibaca berdamp
 
 
 
-## File main.php
+### 2.2 File main.php
 
 ### Sebelum
 
@@ -259,21 +271,13 @@ Gaji dihitung dari upah harian dikali jumlah hari kerja.
 
 gaji = upahPerHari × hariKerja
 
-
-
-
-
-## Konsep yang Dipelajari
-
-- **Abstract class & abstract method** — `Pegawai` tidak bisa di-*instantiate* langsung, dan setiap turunan wajib mengimplementasikan `jenis()`.
-- **Inheritance berjenjang** — `Dosen` bukan turunan langsung dari `Pegawai`, melainkan dari `PegawaiTetap`, sehingga otomatis mendapat logika tunjangan masa kerja tanpa menulis ulang.
-- **Method overriding** — `hitungGaji()` ditimpa di beberapa turunan, tapi tetap memanggil `super()` / `parent::` supaya tidak menduplikasi rumus induk.
-- **Polymorphism** — di `Main`, satu array/loop `Pegawai[]` bisa memuat objek dari kelas berbeda-beda, dan `hitungGaji()` yang dipanggil otomatis sesuai jenis objeknya masing-masing.
-- **Validasi input** — constructor menolak nilai gaji pokok atau hari kerja/masa kerja yang negatif.
-
-# Hasil Output 
-![alt text](image.png) java
+### OUTPUT
 ![alt text](image-1.png) php
+
+
+
+
+
 
 ## Kesimpulan
 

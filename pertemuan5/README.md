@@ -1,8 +1,19 @@
-# Pertemuan 5 - Polimorfisme
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
+
+| Informasi Praktikan | Keterangan |
+|---|---|
+| **Nama** | Khaira Rahma Aprilliani|
+| **NPM** | 4525210108 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [05] - [Polimorfisme)] |
+| **Tanggal** | [01-10-2026] |
 
 
 
-## File Lingkaran.java
+## 1. Implementasi java
+
+### 1.1 File Lingkaran.java
 
 ### Sebelum
 
@@ -31,9 +42,9 @@
 3. **`keliling()` (TODO 2).** `2 * Math.PI * jariJari`.
 4. **Contoh.** Lingkaran(7): luas = 153,94 dan keliling = 43,98.
 
----
 
-## File Persegi.java
+
+### 1.2 File Persegi.java
 
 ### Sebelum
 
@@ -59,7 +70,7 @@
 
 ---
 
-## File segitiga.java (kelas baru)
+### 1.3 File segitiga.java (kelas baru)
 
 ### Setelah
 
@@ -75,9 +86,9 @@
 4. **`keliling()`** adalah `sisiA + sisiB + sisiC`.
 5. **Contoh.** Segitiga(3, 4, 5): s = 6, luas = akar(6 x 3 x 2 x 1) = **6,00**, keliling = **12,00**.
 
----
 
-## File trapesium.java (kelas baru)
+
+### 1.4 File trapesium.java (kelas baru)
 
 ### Setelah
 
@@ -91,9 +102,8 @@
 4. **`keliling()`** adalah `sisiAtas + sisiBawah + 2 * sisiMiring` (kedua kaki miring dianggap sama panjang).
 5. **Contoh.** Trapesium(3, 4, 5, 6): luas = (7 x 5) / 2 = **17,50**, keliling = 3 + 4 + 2 x 6 = **19,00**.
 
----
 
-## File Main.java
+### 1.5 File Main.java
 
 ### Sebelum
 
@@ -122,9 +132,12 @@
 2. **Polimorfisme.** `b.luas()` dan `System.out.println(b)` tetap benar untuk keempat jenis bangun, karena Java menjalankan versi `luas()`, `keliling()`, dan `toString()` milik objek yang sebenarnya.
 3. **Downcasting seperlunya.** `if (b instanceof Lingkaran l)` dipakai hanya untuk `getJariJari()`, method yang cuma dimiliki lingkaran. Untuk `luas()` dan `keliling()` tidak perlu *cast* sama sekali.
 
----
+ ### Screenshoot Main java
+ ![alt text](image.png)
 
-## File BangunDatar.php (semua class)
+## 2. Implementasi php
+
+### 2.1 File BangunDatar.php (semua class)
 
 Seluruh hierarki bangun datar ditaruh dalam satu berkas.
 
@@ -165,9 +178,9 @@ Seluruh hierarki bangun datar ditaruh dalam satu berkas.
 5. **`Trapesium`.** Lima parameter: dua sisi sejajar, dua sisi miring, dan tinggi. Menolak ukuran `<= 0`. `luas()` adalah `((A + B) * tinggi) / 2` dan `keliling()` adalah jumlah keempat sisi.
 6. **Properti `readonly`** dengan *constructor promotion* membuat semua ukuran tidak bisa diubah setelah objek dibuat.
 
----
 
-## File main.php
+
+### 2.2 File main.php
 
 ### Sebelum
 
@@ -189,9 +202,8 @@ Seluruh hierarki bangun datar ditaruh dalam satu berkas.
 2. **`echo $b`** memanggil `__toString()` milik tiap objek, dan **`$b->luas()`** di dalam `array_map` memanggil versi `luas()` milik objek masing-masing (polimorfisme).
 3. **Tipe parameter `BangunDatar $b`** pada fungsi panah menerima semua turunannya.
 
----
 
-## File notifikasi.php
+### 2.3 File notifikasi.php
 
 Latihan mandiri (Langkah 6): bangun hierarki sendiri, lalu tulis `kirimSemua()` **tanpa satu pun pemeriksaan tipe**.
 
@@ -226,10 +238,8 @@ Latihan mandiri (Langkah 6): bangun hierarki sendiri, lalu tulis `kirimSemua()` 
 
 
  
- # Screenshoot
- ## Main java
- ![alt text](image.png)
- ## Main php
+
+ ### Screenshoot Main php
  ![alt text](image-1.png)
 
 ## Penjelasan dan kesimpulan:
