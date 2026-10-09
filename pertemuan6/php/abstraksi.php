@@ -5,12 +5,14 @@ declare(strict_types=1);
 interface Movable
 {
     public function bergerak(): void;
+    public function move(): void;
     public function kecepatanMaksimum(): float;
 }
 
 interface Fuelable
 {
     public function isiBahanBakar(float $jumlah): void;
+    public function refuel(float $jumlah): void;
     public function kapasitasTangki(): float;
     public function tipeBahanBakar(): TipeBahanBakar;
 }
@@ -103,12 +105,22 @@ final class Mobil extends Kendaraan implements Movable, Fuelable
         $this->log('mobil mulai bergerak');
     }
 
+    public function move(): void
+    {
+        $this->bergerak();
+    }
+
     public function kecepatanMaksimum(): float { return 180.0; }
 
     public function isiBahanBakar(float $jumlah): void
     {
         $jumlah = max(0.0, $jumlah);
         $this->isiTangki = min($this->kapasitas, $this->isiTangki + $jumlah);
+    }
+
+    public function refuel(float $jumlah): void
+    {
+        $this->isiBahanBakar($jumlah);
     }
 
     public function kapasitasTangki(): float { return $this->kapasitas; }
@@ -130,6 +142,11 @@ final class Sepeda extends Kendaraan implements Movable
     public function bergerak(): void
     {
         $this->log('sepeda mulai dikayuh');
+    }
+
+    public function move(): void
+    {
+        $this->bergerak();
     }
 
     public function kecepatanMaksimum(): float { return 25.0; }

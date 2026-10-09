@@ -25,16 +25,17 @@ public class Mahasiswa {
 
     public Mahasiswa(String nim, String nama, double nilaiTugas, double nilaiUts, double nilaiUas) {
         // TODO 2: tolak NIM yang kosong atau null.
-        if (nim == null || nim.isBlank()) {
-            throw new IllegalArgumentException("NIM tidak boleh kosong");
+        if (nim == null || nim.trim().isEmpty()) {
+            throw new IllegalArgumentException("NIM tidak boleh kosong atau null");
         }
+        String nimValid = nim.trim();
 
-        // TODO 3: tolak setiap komponen nilai yang di luar rentang 0-100.
+        // Validasi setiap komponen nilai agar berada dalam rentang 0-100.
         pastikanNilaiSah("tugas", nilaiTugas);
         pastikanNilaiSah("UTS", nilaiUts);
         pastikanNilaiSah("UAS", nilaiUas);
 
-        this.nim = nim;
+        this.nim = nimValid;
         this.nama = nama;
         this.nilaiTugas = nilaiTugas;
         this.nilaiUts = nilaiUts;
@@ -43,10 +44,14 @@ public class Mahasiswa {
 
     // TODO 4: method privat pembantu untuk memvalidasi satu komponen nilai.
     private static void pastikanNilaiSah(String namaKomponen, double nilai) {
-        if (nilai < NILAI_MIN || nilai > NILAI_MAX) {
+        if (namaKomponen == null || namaKomponen.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama komponen tidak boleh kosong");
+        }
+
+        if (Double.isNaN(nilai) || Double.isInfinite(nilai) || nilai < NILAI_MIN || nilai > NILAI_MAX) {
             throw new IllegalArgumentException(
-                    "Nilai " + namaKomponen + " harus di antara " + NILAI_MIN + " dan " + NILAI_MAX
-                            + ", diberikan: " + nilai);
+                    "Nilai " + namaKomponen + " harus berada di rentang " + NILAI_MIN + " sampai "
+                            + NILAI_MAX + ", diberikan: " + nilai);
         }
     }
 
@@ -54,14 +59,22 @@ public class Mahasiswa {
      * TODO 5: hitung nilai akhir memakai konstanta bobot di atas.
      */
     public double nilaiAkhir() {
-        return nilaiTugas * BOBOT_TUGAS + nilaiUts * BOBOT_UTS + nilaiUas * BOBOT_UAS;
+        return (nilaiTugas * BOBOT_TUGAS)
+                + (nilaiUts * BOBOT_UTS)
+                + (nilaiUas * BOBOT_UAS);
     }
 
     /**
-     * TODO 6: kembalikan huruf mutu berdasarkan nilai akhir.
+     * Mengembalikan huruf mutu berdasarkan nilai akhir.
+     * A = 80 ke atas, B = 70-79, C = 60-69, D = 50-59, E = di bawah 50.
      */
     public String hurufMutu() {
         double akhir = nilaiAkhir();
+
+        if (Double.isNaN(akhir) || Double.isInfinite(akhir)) {
+            throw new IllegalStateException("Nilai akhir tidak valid");
+        }
+
         if (akhir >= 80) return "A";
         if (akhir >= 70) return "B";
         if (akhir >= 60) return "C";
@@ -70,10 +83,19 @@ public class Mahasiswa {
     }
 
     // ── Getter ────────────────────────────────────────────────
-    // TODO 7: getter untuk nim, nama, dan nilaiAkhir. Tidak ada setNim().
-    public String getNim()  { return nim; }
-    public String getNama() { return nama; }
-    public double getNilaiAkhir() { return nilaiAkhir(); }
+    // Getter untuk NIM dan nama yang tidak dapat diubah, serta nilai akhir.
+    // Tidak ada setter untuk NIM.
+    public String getNim() {
+        return nim;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public double getNilaiAkhir() {
+        return nilaiAkhir();
+    }
 
     @Override
     public String toString() {
