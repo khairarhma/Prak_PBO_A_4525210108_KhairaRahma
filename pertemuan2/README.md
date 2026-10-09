@@ -18,7 +18,7 @@
 
 Kode awal `Mahasiswa.java` berisi kerangka class dengan beberapa komentar `TODO` yang harus dikerjakan.
 
-![Java setelah - main.java](images/image-2.png)
+![Java setelah - main.java](images/image-2.png) 
 
 ![Java setelah - main.java](images/image-3.png)
 
