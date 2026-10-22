@@ -7,7 +7,7 @@
 | **PJ**           | Naufal Maulana Saputra                          |
 | **Tema**         | Sewa Kos                                        |
 | **Tanggal**      | 22 Oktober 2026                                 |
-| **Nama**         | Khaira Rahma Aprilliani                         |
+| **Nama**         | Mochammad Jihan Isfalana                        |
 | **NPM**          | 4525210110                                      |
 
 ---
