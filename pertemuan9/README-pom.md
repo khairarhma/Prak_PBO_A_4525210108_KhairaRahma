@@ -1,3 +1,15 @@
+# LAPORAN PRAKTIKUM PEMROGRAMAN BERBASIS OBJEK
+
+| Informasi Praktikan | Keterangan |
+|---|---|
+| **Nama** | Khaira Rahma Aprilliani|
+| **NPM** | 4525210108 |
+| **Kelas** | A |
+| **Mata Kuliah** | Pemrograman Berbasis Objek (PBO) |
+| **Pertemuan** | [09] - [Package)] |
+| **Tanggal** | [29-10-2026] |
+
+
 ## Perubahan `pom.xml` per TODO: Sebelum dan Sesudah (Maven, Pertemuan 9)
 
 ### TODO 1-3: Koordinat proyek (`groupId`, `artifactId`, `version`)
